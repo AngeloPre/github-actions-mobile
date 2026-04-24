@@ -1,4 +1,4 @@
-FROM node:24 AS build
+FROM node:20 AS build
 
 WORKDIR /usr/src/app
 COPY package*.json ./
@@ -6,7 +6,7 @@ RUN npm ci
 COPY . .
 RUN npx expo export --platform web
 
-FROM node:24-alpine
+FROM node:20-alpine
 
 WORKDIR /usr/src/app
 RUN npm install -g serve
