@@ -1,6 +1,7 @@
 name: CI and Pages Deploy
 
 on:
+  pull_request:
   push:
     branches:
       - release
